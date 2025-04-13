@@ -1,13 +1,23 @@
-import { getLoggedInUser, logout } from "../auth/auth";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom"; // Importa Link per i collegamenti
+// src/pages/Profile.jsx
+import { useEffect, useState } from "react";
+import { logout, getLoggedInUser } from "../auth/auth";
+import { useNavigate, Link } from "react-router-dom";
 
 const Profile = () => {
-  const user = getLoggedInUser();
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
+  useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await getLoggedInUser();
+      setUser(currentUser);
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = async () => {
+    await logout();
     navigate("/login");
   };
 
@@ -21,7 +31,7 @@ const Profile = () => {
       ) : (
         <>
           <h2>Devi fare il login per accedere al profilo.</h2>
-          <Link to="/login">Vai al login</Link> {/* Collegamento al login */}
+          <Link to="/login">Vai al login</Link>
         </>
       )}
     </div>

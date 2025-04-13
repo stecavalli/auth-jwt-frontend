@@ -1,3 +1,4 @@
+// src/pages/Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,13 +17,13 @@ const Login = () => {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include", // essenziale per cookie
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        localStorage.setItem("loggedInUser", JSON.stringify(data.user));
         navigate("/profile");
       } else {
         setMessage(data.message || "Login fallito");

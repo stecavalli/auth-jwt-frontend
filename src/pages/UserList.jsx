@@ -1,46 +1,43 @@
+// src/pages/UserList.jsx
 import { useEffect, useState } from "react";
 import "../styles/Form.css";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
+  const [message, setMessage] = useState("");
 
-  // Carica utenti da localStorage
   useEffect(() => {
-    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-    setUsers(storedUsers);
+    const fetchUsers = async () => {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users`, {
+          credentials: "include",
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setUsers(data.users);
+        } else {
+          setMessage("Autenticazione necessaria o errore nel caricamento utenti.");
+        }
+      } catch (err) {
+        setMessage("Errore nella connessione al server.");
+      }
+    };
+
+    fetchUsers();
   }, []);
-
-  // Elimina utente
-  const handleDelete = (usernameToDelete) => {
-    const filteredUsers = users.filter(user => user.username !== usernameToDelete);
-    setUsers(filteredUsers);
-    localStorage.setItem("users", JSON.stringify(filteredUsers));
-
-    // Se l'utente eliminato era loggato, effettua logout
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    if (loggedInUser?.username === usernameToDelete) {
-      localStorage.removeItem("loggedInUser");
-    }
-  };
 
   return (
     <div className="form-container">
       <div className="form-card">
         <h2>Utenti Registrati</h2>
-        {users.length === 0 ? (
+        {message && <p>{message}</p>}
+        {users.length === 0 && !message ? (
           <p>Nessun utente registrato.</p>
         ) : (
           <ul>
             {users.map((user, index) => (
-              <li key={index} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <span>{user.username}</span>
-                <button
-                  onClick={() => handleDelete(user.username)}
-                  className="delete-btn"
-                >
-                  Elimina
-                </button>
-              </li>
+              <li key={index}>{user.username}</li>
             ))}
           </ul>
         )}

@@ -1,3 +1,4 @@
+// src/pages/Register.jsx
 import { useState } from "react";
 
 const Register = () => {
@@ -14,14 +15,14 @@ const Register = () => {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        setMessage("Registrazione completata ✅");
-        setFormData({ username: "", password: "" });
+        window.location.href = "/profile"; // login automatico e redirect
       } else {
         setMessage(data.message || "Errore nella registrazione");
       }

@@ -1,37 +1,25 @@
-export function register(username, password) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+// src/auth/auth.js
+export async function getLoggedInUser() {
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/me`, {
+      method: "GET",
+      credentials: "include",
+    });
 
-  const existingUser = users.find((user) => user.username === username);
-  if (existingUser) {
-    return { success: false, message: "Nome utente già esistente." };
+    if (res.ok) {
+      const data = await res.json();
+      return data.user;
+    } else {
+      return null;
+    }
+  } catch (err) {
+    return null;
   }
-
-  const newUser = { username, password };
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
-
-  return { success: true };
 }
 
-export function login(username, password) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const user = users.find(
-    (user) => user.username === username && user.password === password
-  );
-
-  if (user) {
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-    return { success: true };
-  }
-
-  return { success: false, message: "Credenziali non valide." };
-}
-
-export function getLoggedInUser() {
-  return JSON.parse(localStorage.getItem("loggedInUser"));
-}
-
-export function logout() {
-  localStorage.removeItem("loggedInUser");
+export async function logout() {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/logout`, {
+    method: "POST",
+    credentials: "include",
+  });
 }
