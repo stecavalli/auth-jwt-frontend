@@ -104,20 +104,28 @@ span {
 }
 
 button {
-  height: 100%; 
-  padding: 0 12px;
+  width: 100px;
+  padding: 12px;
   background-color: lime;
   color: black;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 15px;
+}
+
+.allineato {
+  height: 100%; 
+  padding: 0 12px;
+  color: black;
+  font-size: 14px;
 }
 
 .ridotto {
   width: 80px;
   padding: 12px;
-  background-color: beige;
+  background-color: lime;
   color: black;
   border: none;
   border-radius: 5px;

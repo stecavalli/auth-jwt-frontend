@@ -73,7 +73,7 @@ const UserList = () => {
                 <span>
                   {user.username}
                 </span>
-                <button onClick={() => handleDelete(user.username)}>Elimina</button>
+                <button className="allineato" onClick={() => handleDelete(user.username)}>Elimina</button>
               </li>
             ))}
           </ul>
