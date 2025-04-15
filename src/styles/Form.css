@@ -83,6 +83,26 @@ p {
   font-size: 14px;
 }
 
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  height: 40px;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-weight: bold;
+  height: 100%;
+  min-width: 100px;
+}
+
 button {
   width: 100px;
   height: 100%;
@@ -110,24 +130,4 @@ button.ridotto {
 
 button:hover {
   background-color: yellow;
-}
-
-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  font-weight: bold;
-  height: 100%; /* riempi tutta l'altezza del li */
-  min-width: 100px;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 8px 0;
-  height: 40px; /* imposta altezza fissa per uniformità */
 }
