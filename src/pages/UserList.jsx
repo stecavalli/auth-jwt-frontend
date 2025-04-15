@@ -61,7 +61,7 @@ const UserList = () => {
         <h2>Utenti Registrati</h2>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <button onClick={handleLogout}>Logout</button>
-          <Link to="/profile">Vai al Profilo</Link>
+          <button onClick={() => navigate("/profile")}>Vai al Profilo</button>
         </div>
         {message && <p>{message}</p>}
         {users.length === 0 && !message ? (
@@ -70,7 +70,15 @@ const UserList = () => {
           <ul>
             {users.map((user, index) => (
               <li key={index} style={{ display: "flex", justifyContent: "space-between", margin: "5px 0" }}>
-                <span>{user.username}</span>
+                <span style={{ 
+                  display: "inline-block", 
+                  padding: "10px", 
+                  backgroundColor: "#f0f0f0", 
+                  borderRadius: "5px", 
+                  cursor: "default" 
+                }}>
+                  {user.username} {/* Username stilizzato come pulsante, non cliccabile */}
+                </span>
                 <button onClick={() => handleDelete(user.username)}>Elimina</button>
               </li>
             ))}
