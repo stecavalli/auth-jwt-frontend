@@ -54,7 +54,7 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Accedi</button>
+          <button className="spaced-button" type="submit">Accedi</button>
         </form>
         {message && <p>{message}</p>}
         <p>

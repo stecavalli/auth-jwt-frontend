@@ -119,6 +119,14 @@ li button {
   font-size: 14px;
 }
 
+form button {
+  margin-top: 20px;
+}
+
+.spaced-button {
+  margin-top: 20px;
+}
+
 .ridotto {
   width: 80px;
   padding: 12px;

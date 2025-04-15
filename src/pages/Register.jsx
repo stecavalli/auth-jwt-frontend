@@ -54,7 +54,7 @@ const Register = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Registrati</button>
+          <button className="spaced-button" type="submit">Registrati</button>
         </form>
         {message && <p>{message}</p>}
         <p>
