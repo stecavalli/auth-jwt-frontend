@@ -69,7 +69,7 @@ const UserList = () => {
         ) : (
           <ul>
             {users.map((user, index) => (
-              <li key={index} style={{ display: "flex", justifyContent: "space-between", margin: "5px 0" }}>
+              <li key={index}>
                 <span>
                   {user.username}
                 </span>
