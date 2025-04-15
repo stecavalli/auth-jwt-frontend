@@ -85,6 +85,7 @@ p {
 
 button {
   width: 100px;
+  height: 100%;
   padding: 12px;
   background-color: lime;
   color: black;
@@ -113,19 +114,20 @@ button:hover {
 
 span {
   display: flex;
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra orizzontalmente */
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
   background-color: #f0f0f0;
   border-radius: 5px;
-  cursor: default;
   font-weight: bold;
-  height: 40px; /* Imposta un'altezza per il centro verticale */
+  height: 100%; /* riempi tutta l'altezza del li */
+  min-width: 100px;
 }
 
 li {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
-  margin: 5px 0; 
   align-items: center;
+  margin: 8px 0;
+  height: 40px; /* imposta altezza fissa per uniformità */
 }
