@@ -84,9 +84,9 @@ p {
 }
 
 button {
-  width: 120px;
+  width: 80px;
   padding: 12px;
-  background-color: green;
+  background-color: lime;
   color: black;
   border: none;
   border-radius: 5px;
