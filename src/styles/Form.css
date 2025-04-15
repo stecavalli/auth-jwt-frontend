@@ -110,3 +110,15 @@ button.ridotto {
 button:hover {
   background-color: yellow;
 }
+
+span {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: default;
+  font-weight: bold;
+  height: 40px; /* Imposta un'altezza per il centro verticale */
+}

@@ -70,14 +70,8 @@ const UserList = () => {
           <ul>
             {users.map((user, index) => (
               <li key={index} style={{ display: "flex", justifyContent: "space-between", margin: "5px 0" }}>
-                <span style={{ 
-                  display: "inline-block", 
-                  padding: "10px", 
-                  backgroundColor: "#f0f0f0", 
-                  borderRadius: "5px", 
-                  cursor: "default" 
-                }}>
-                  {user.username} {/* Username stilizzato come pulsante, non cliccabile */}
+                <span>
+                  {user.username}
                 </span>
                 <button onClick={() => handleDelete(user.username)}>Elimina</button>
               </li>
