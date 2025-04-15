@@ -94,7 +94,6 @@ li {
 button {
   width: 100px;
   height: 100%;
-  padding: 12px;
   background-color: lime;
   color: black;
   border: none;
@@ -104,7 +103,7 @@ button {
   margin-top: 15px;
 }
 
-button.altezza {
+.altezza {
   width: 100%;
   color: black;
   font-size: 16px;
@@ -115,7 +114,7 @@ button.altezza {
   height: 40px;
 } 
 
-button.ridotto {
+.ridotto {
   width: 80px;
   padding: 12px;
   background-color: aqua;
