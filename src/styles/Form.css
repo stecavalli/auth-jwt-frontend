@@ -122,3 +122,10 @@ span {
   font-weight: bold;
   height: 40px; /* Imposta un'altezza per il centro verticale */
 }
+
+li {
+  display: "flex", 
+  justifyContent: "space-between", 
+  margin: "5px 0", 
+  alignItems: "center",
+}
