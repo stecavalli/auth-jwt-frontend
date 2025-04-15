@@ -60,8 +60,8 @@ const UserList = () => {
       <div className="form-card">
         <h2>Utenti Registrati</h2>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <button onClick={handleLogout}>Logout</button>
-          <button onClick={() => navigate("/profile")}>Vai al Profilo</button>
+          <button className="ridotto" onClick={handleLogout}>Logout</button>
+          <button className="ridotto" onClick={() => navigate("/profile")}>Profilo</button>
         </div>
         {message && <p>{message}</p>}
         {users.length === 0 && !message ? (

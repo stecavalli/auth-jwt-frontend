@@ -95,6 +95,18 @@ button {
   margin-top: 15px;
 }
 
+button.ridotto {
+  width: 80px;
+  padding: 12px;
+  background-color: aqua;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+} 
+
 button:hover {
   background-color: yellow;
 }
