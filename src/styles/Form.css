@@ -124,8 +124,8 @@ span {
 }
 
 li {
-  display: "flex", 
-  justifyContent: "space-between", 
-  margin: "5px 0", 
-  alignItems: "center",
+  display: flex; 
+  justify-content: "space-between";
+  margin: "5px 0"; 
+  align-items: "center";
 }
