@@ -23,7 +23,7 @@ const Register = () => {
 
       if (res.ok) {
         // window.location.href = "/profile"; // login automatico e redirect
-        setMessage("Registrazione completata ✅");
+        setMessage("Registrazione completata");
         setFormData({ username: "", password: "" });
       } else {
         setMessage(data.message || "Errore nella registrazione");
