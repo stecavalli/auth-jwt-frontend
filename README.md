@@ -38,7 +38,7 @@ The [auth-jwt-backend](https://github.com/stecavalli/auth-jwt-backend) repositor
 
 <i>Create a `.env` file in the root of the project with:</i>
 <br><br>
-VITE_API_URL=https://TUO_NOME_SITO_PERSONALIZZATO.onrender.com
+VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com
 
 ## 📦 Clone the Project
 
