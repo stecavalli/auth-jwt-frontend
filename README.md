@@ -66,7 +66,9 @@ The getLoggedInUser() helper checks user auth status.
 PrivateRoute protects routes based on authentication.
 
 ## 🚀 Deployment
-You can deploy the frontend with services like Netlify or Vercel. Make sure to set the correct VITE_API_URL in your environment variables.
+You can deploy the frontend with services like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com). 
+<br>
+Make sure to set the correct VITE_API_URL in your environment variables.
 
 ## 📬 API Endpoints (Used by Frontend)
 These endpoints should be exposed by your backend:
