@@ -1,4 +1,3 @@
-// src/pages/UserList.jsx
 import { useEffect, useState } from "react";
 import { logout } from "../auth/auth";
 import { useNavigate, Link } from "react-router-dom";
@@ -21,7 +20,11 @@ const UserList = () => {
 
       if (res.ok) {
         const data = await res.json();
-        setUsers(data.users);
+        if (data.users && Array.isArray(data.users)) {
+          setUsers(data.users);
+        } else {
+          setMessage("Errore: i dati degli utenti non sono validi.");
+        }
       } else {
         setMessage("Autenticazione necessaria o errore nel caricamento utenti.");
       }
@@ -46,7 +49,8 @@ const UserList = () => {
       });
 
       if (res.ok) {
-        setUsers(users.filter(user => user.username !== usernameToDelete));
+        // Ottimizzazione del filtro, elimina direttamente l'utente
+        setUsers((prevUsers) => prevUsers.filter(user => user.username !== usernameToDelete));
       } else {
         setMessage("Errore durante l'eliminazione dell'utente.");
       }
@@ -63,16 +67,14 @@ const UserList = () => {
           <button className="ridotto" onClick={handleLogout}>Logout</button>
           <button className="ridotto" onClick={() => navigate("/profile")}>Profilo</button>
         </div>
-        {message && <p>{message}</p>}
+        {message && <p style={{ color: "red" }}>{message}</p>}
         {users.length === 0 && !message ? (
           <p>Nessun utente registrato.</p>
         ) : (
           <ul>
             {users.map((user, index) => (
-              <li key={index}>
-                <span>
-                  {user.username}
-                </span>
+              <li key={user.username || index}>
+                <span>{user.username}</span>
                 <button onClick={() => handleDelete(user.username)}>Elimina</button>
               </li>
             ))}
@@ -85,4 +87,3 @@ const UserList = () => {
 };
 
 export default UserList;
-
