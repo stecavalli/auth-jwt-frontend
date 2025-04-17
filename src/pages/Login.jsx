@@ -30,6 +30,7 @@ const Login = () => {
         setMessage(data.message || "Login fallito"); // Messaggio di errore
       }
     } catch (err) {
+      console.error(err);
       setMessage("Errore di connessione al server");
     }
   };
