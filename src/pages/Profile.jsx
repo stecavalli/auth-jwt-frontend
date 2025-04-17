@@ -42,7 +42,7 @@ const Profile = () => {
       
       {user ? (
         <>
-          <h2>Benvenuto, {user.username}! <br></br> La tua email è {user.email}!</h2>
+          <h2>Benvenuto, {user.username || "utente"}! <br /> La tua email è {user.email}!</h2>
           <button onClick={handleLogout}>Esci</button>
         </>
       ) : (
