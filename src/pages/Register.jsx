@@ -28,6 +28,7 @@ const Register = () => {
         setMessage(data.message || "Errore nella registrazione");
       }
     } catch (err) {
+      console.error(err);
       setMessage("Errore di connessione al server");
     }
   };
