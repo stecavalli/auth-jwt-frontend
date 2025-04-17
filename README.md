@@ -97,3 +97,19 @@ Currently, two official plugins are available:
 ## ⚙️ Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 🌐 Frontend Page Examples
+
+When you open the site on Netlify, you will see the login page and you can
+<br>
+go to the Register page, which are very similar to the following images:
+<br><br>
+![Frontend Register](src/images/registrazione.png)
+![Frontend Login](src/images/login.png)
+<br><br>
+by logging in you will be redirected to the profile page and by clicking 
+<br>
+on view users you will navigate to the user list page:
+<br><br>
+![Frontend Users List](src/images/listautenti.png)
+![Frontend Profile](src/images/profilo.png)
