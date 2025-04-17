@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const Register = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ username: "",email: "", password: "" });
   const [message, setMessage] = useState("");
 
   const handleChange = (e) =>
@@ -43,6 +43,14 @@ const Register = () => {
             name="username"
             placeholder="Nome utente"
             value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Indirizzo email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
