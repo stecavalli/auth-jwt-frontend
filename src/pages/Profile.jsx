@@ -12,6 +12,7 @@ const Profile = () => {
     const fetchUser = async () => {
       try {
         const currentUser = await getLoggedInUser();
+        console.log("Dati utente:", currentUser);
         if (currentUser) {
           setUser(currentUser);
         } else {
