@@ -1,11 +1,10 @@
-// src/pages/Register.jsx
 import { useState } from "react";
 
 const Register = () => {
-  const [formData, setFormData] = useState({ username: "",email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", email: "", password: "" });
   const [message, setMessage] = useState("");
 
-  const handleChange = (e) =>
+  const handleChange = (e) => 
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
@@ -22,9 +21,9 @@ const Register = () => {
       const data = await res.json();
 
       if (res.ok) {
-        // window.location.href = "/profile"; // login automatico e redirect
+        // window.location.href = "/profile";  // Redirect automatico dopo la registrazione
         setMessage("Registrazione completata");
-        setFormData({ username: "", password: "" });
+        setFormData({ username: "", email: "", password: "" }); // Azzera tutto il form
       } else {
         setMessage(data.message || "Errore nella registrazione");
       }
@@ -47,7 +46,7 @@ const Register = () => {
             required
           />
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Indirizzo email"
             value={formData.email}
@@ -71,6 +70,10 @@ const Register = () => {
       </div>
     </div>
   );
+};
+
+export default Register;
+
 };
 
 export default Register;
