@@ -25,9 +25,9 @@ const Login = () => {
       if (res.ok) {
         // Reset del form in caso di login riuscito
         setFormData({ email: "", password: "" });
-        navigate("/profile"); // Naviga alla pagina del profilo
+        navigate("/profile");
       } else {
-        setMessage(data.message || "Login fallito"); // Messaggio di errore
+        setMessage(data.message || "Login fallito");
       }
     } catch (err) {
       console.error(err);
