@@ -16,7 +16,7 @@ const Login = () => {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include", // essenziale per i cookie
+        credentials: "include", // Essenziale per i cookie
         body: JSON.stringify(formData),
       });
 
@@ -25,9 +25,9 @@ const Login = () => {
       if (res.ok) {
         // Reset del form in caso di login riuscito
         setFormData({ email: "", password: "" });
-        navigate("/profile");
+        navigate("/profile"); // Naviga alla pagina del profilo
       } else {
-        setMessage(data.message || "Login fallito");
+        setMessage(data.message || "Login fallito"); // Messaggio di errore
       }
     } catch (err) {
       setMessage("Errore di connessione al server");
@@ -55,7 +55,9 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-          <button className="spaced-button" type="submit">Accedi</button>
+          <button className="spaced-button" type="submit">
+            Accedi
+          </button>
         </form>
         {message && <p className="error-message">{message}</p>}
         <p>
