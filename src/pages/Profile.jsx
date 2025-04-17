@@ -4,8 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Stato di caricamento
-  const [error, setError] = useState(""); // Stato per eventuali errori
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,12 +35,12 @@ const Profile = () => {
   };
 
   if (loading) {
-    return <div>Caricamento...</div>; // Mostra un messaggio di caricamento
+    return <div>Caricamento...</div>;
   }
 
   return (
     <div>
-      {error && <p style={{ color: "red" }}>{error}</p>} {/* Messaggio di errore */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       
       {user ? (
         <>
