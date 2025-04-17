@@ -1,16 +1,27 @@
-// src/pages/Profile.jsx
 import { useEffect, useState } from "react";
 import { logout, getLoggedInUser } from "../auth/auth";
 import { useNavigate, Link } from "react-router-dom";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Stato di caricamento
+  const [error, setError] = useState(""); // Stato per eventuali errori
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
-      const currentUser = await getLoggedInUser();
-      setUser(currentUser);
+      try {
+        const currentUser = await getLoggedInUser();
+        if (currentUser) {
+          setUser(currentUser);
+        } else {
+          setError("Utente non trovato o non autenticato.");
+        }
+      } catch (err) {
+        setError("Errore nel recupero dei dati utente.");
+      } finally {
+        setLoading(false); // Finito il caricamento
+      }
     };
 
     fetchUser();
@@ -21,12 +32,18 @@ const Profile = () => {
     navigate("/login");
   };
 
+  if (loading) {
+    return <div>Caricamento...</div>; // Mostra un messaggio di caricamento
+  }
+
   return (
     <div>
+      {error && <p style={{ color: "red" }}>{error}</p>} {/* Messaggio di errore */}
+      
       {user ? (
         <>
           <h2>Benvenuto, {user.username}!</h2>
-          <h2>La tua email è {user.email}!</h2>
+          <h3>La tua email è {user.email}!</h3>
           <button onClick={handleLogout}>Esci</button>
         </>
       ) : (
