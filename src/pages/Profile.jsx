@@ -19,6 +19,7 @@ const Profile = () => {
           setError("Utente non trovato o non autenticato.");
         }
       } catch (err) {
+        console.error(err);
         setError("Errore nel recupero dei dati utente.");
       } finally {
         setLoading(false); // Finito il caricamento
