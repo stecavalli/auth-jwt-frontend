@@ -29,6 +29,7 @@ const UserList = () => {
         setMessage("Autenticazione necessaria o errore nel caricamento utenti.");
       }
     } catch (err) {
+      console.error(err);
       setMessage("Errore nella connessione al server.");
     }
   };
@@ -55,6 +56,7 @@ const UserList = () => {
         setMessage("Errore durante l'eliminazione dell'utente.");
       }
     } catch (err) {
+      console.error(err);
       setMessage("Errore nella connessione al server.");
     }
   };
