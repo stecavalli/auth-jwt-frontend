@@ -121,12 +121,12 @@ When you open the site on Netlify, you will see the login page and you can
 <br>
 go to the Register page, which are very similar to the following images:
 <br><br>
-![Frontend Register](src/images/registrazione.png)
-![Frontend Login](src/images/login.png)
+<img src="src/images/login.png" width="320"/>
+<img src="src/images/registrazione.png" width="320"/>
 <br><br>
 by logging in you will be redirected to the profile page and by clicking 
 <br>
 on view users you will navigate to the user list page:
 <br><br>
-![Frontend Users List](src/images/listautenti.png)
-![Frontend Profile](src/images/profilo.png)
+<img src="src/images/profilo.png" height="160"/>
+<img src="src/images/listautenti.png" height="300"/>
