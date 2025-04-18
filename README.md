@@ -44,7 +44,7 @@ cd auth-jwt-frontend
 
 <i>Create a `.env` file in the root of the project with:</i>
 <br><br>
-VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com  &nbsp;&nbsp;&nbsp;&nbsp;*** Url to be set directly on the site server [Render](https://www.render.com/) ***
+VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com  &nbsp;&nbsp;&nbsp;&nbsp;*** Url to set directly on the [Netlify](https://www.netlify.com/) site. ***
 <br>
 VITE_API_URL=http://localhost:3001  &nbsp;&nbsp;&nbsp;&nbsp;*** Url for local testing, replace 3001 with the actual port number your backend server is listening to ***
 
