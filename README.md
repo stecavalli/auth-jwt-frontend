@@ -34,17 +34,32 @@ The [auth-jwt-backend](https://github.com/stecavalli/auth-jwt-backend) repositor
 - Vite
 - Fetch API
 
-## 🔧 Environment Setup
-
-<i>Create a `.env` file in the root of the project with:</i>
-<br><br>
-VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com
-
 ## 📦 Clone the Project
 
 git clone https://github.com/stecavalli/auth-jwt-frontend.git
 <br>
 cd auth-jwt-frontend
+
+## 🔧 Environment Setup
+
+<i>Create a `.env` file in the root of the project with:</i>
+<br><br>
+VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com  &nbsp;&nbsp;&nbsp;&nbsp;*** Url to be set directly on the site server [Render](https://www.render.com/) ***
+<br>
+VITE_API_URL=http://localhost:3001  &nbsp;&nbsp;&nbsp;&nbsp;*** Url for local testing, replace 3001 with the actual port number your backend server is listening to ***
+
+## ✏️ Local Test File Changes
+This repository and its backend repository are configured to run on the servers listed above. 
+<br>
+To run locally on your PC, some changes to three files in the backend are required, and the 
+<br>
+.env files need to be added to both repositories. 
+<br>
+Here are the changes needed:
+<br>
+In this repository you just need to add the .env file as described above.
+<br>
+Go to the [auth-jwt-backend](https://github.com/stecavalli/auth-jwt-backend) repository to see the changes you need to make.
 
 ## ▶️ Getting Started
 
@@ -96,7 +111,9 @@ Currently, two official plugins are available:
 
 ## ⚙️ Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. 
+Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) 
+to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 ## 🌐 Frontend Page Examples
 
