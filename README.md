@@ -46,7 +46,7 @@ cd auth-jwt-frontend
 <br><br>
 VITE_API_URL=https://<TUO_NOME_SITO_PERSONALIZZATO>.onrender.com  &nbsp;&nbsp;&nbsp;&nbsp;*** Url to set directly on the [Netlify](https://www.netlify.com/) site. ***
 <br>
-VITE_API_URL=http://localhost:3001  &nbsp;&nbsp;&nbsp;&nbsp;*** Url for local testing, replace 3001 with the actual port number your backend server is listening to ***
+VITE_API_URL=http://localhost:5173  &nbsp;&nbsp;&nbsp;&nbsp;*** Url for local testing, replace 5173 with the actual port number. ***
 
 ## ✏️ Local Test File Changes
 This repository and its backend repository are configured to run on the servers listed above. 
